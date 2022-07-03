@@ -1,0 +1,36 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  background-color: #010002;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+footer {
+  /* margin-top: 100%; */
+}
+
+h1, p, a {
+  color: #700;
+  margin: 10px 0;
+}
+
+.game-container {
+  background-color: #afafaf;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+}
+
+.square-container {
+  height: 650px;
+  width: 650px;
+  background-color: #fff;
+}
