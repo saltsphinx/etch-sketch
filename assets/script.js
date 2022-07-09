@@ -11,13 +11,7 @@ eraserButton.addEventListener("click", () => rainbowToggled = false);
 resetButton.addEventListener("click", resetGrid);;
 resizeButton.addEventListener("click", resizeGrid);
 
-for (let i = 1; i <= 16 * 16; i++) {
-  const squareDiv = document.createElement("div");
-  squareDiv.addEventListener("mouseover", colorSquare);
-
-  squareDiv.classList.toggle("square");
-  container.appendChild(squareDiv);
-}
+generateGrid(16, 16);
 
 function colorSquare(square) {
   const color = rainbowToggled == true ? generateColor() : "#ddd";
@@ -49,7 +43,11 @@ function resizeGrid() {
     container.firstChild.remove();
   }
 
-  for (let i = 1; i <= height * width; i++) {
+  generateGrid(width, height);
+}
+
+function generateGrid(x, y) {
+  for (let i = 1; i <= y * x; i++) {
     const squareDiv = document.createElement("div");
     squareDiv.addEventListener("mouseover", colorSquare);
   
@@ -57,5 +55,5 @@ function resizeGrid() {
     container.appendChild(squareDiv);
   }
 
-  container.setAttribute("style", `grid-template-columns: repeat(${height}, 1fr); grid-template-rows: repeat(${width}, 1fr);`);
+  container.setAttribute("style", `grid-template-columns: repeat(${y}, 1fr); grid-template-rows: repeat(${x}, 1fr);`);
 }

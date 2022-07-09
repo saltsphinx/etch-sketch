@@ -34,8 +34,6 @@ h1, p, a {
   height: 650px;
   width: 650px;
   display: grid;
-  grid-template-columns: repeat(16, 1fr);
-  grid-template-rows: repeat(16, 1fr);
   gap: 1px;
 }
 
